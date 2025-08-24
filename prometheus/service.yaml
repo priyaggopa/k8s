@@ -4,9 +4,17 @@ metadata:
   name: prometheus-service
   namespace: grafana
 spec:
+  type: LoadBalancer
   selector:
     app: prometheus
   ports:
-  - port: 9090        # Service port
-    targetPort: 9090  # Container port
-  type: ClusterIP     # change to LoadBalancer if you want external access
+    - name: web
+      port: 9090
+      targetPort: 9090
+      protocol: TCP
+    # If you really need a second port, keep it and name it:
+    # - name: prom-admin
+    #   port: 9093
+    #   targetPort: 9093
+    #   protocol: TCP
+
