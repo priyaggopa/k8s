@@ -13,4 +13,4 @@ data:
       - targets: ['localhost:9090']
     - job_name: 'grafana'
       static_configs:
-      - targets: ['grafanaapp-service:3000']
+      - targets: ['grafanaapp-service:80']
