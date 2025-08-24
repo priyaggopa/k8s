@@ -1,0 +1,12 @@
+spec:
+  template:
+    spec:
+      volumes:
+      - name: grafana-storage
+        persistentVolumeClaim:
+          claimName: grafana-pvc
+      containers:
+      - name: grafana
+        volumeMounts:
+        - name: grafana-storage
+          mountPath: /var/lib/grafana
