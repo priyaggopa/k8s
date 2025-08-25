@@ -18,5 +18,3 @@ data:
    - job_name: 'pgdb'
      static_configs:
      - targets: ['34.60.156.135:9187']
-       labels:
-         service: 'pg-postgresql-metrics'
